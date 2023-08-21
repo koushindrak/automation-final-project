@@ -63,7 +63,7 @@ module "loadbalancer-n01545552" {
   load_balancer_name = "load-balancer-5552"
   public_ip_name     = "load-balancer-5552-public-ip"
   nic                = module.vmlinux-n01545552.linux_nic_id
-  diagnostic_name = "LoadBalancerLog5368"
+  diagnostic_name = "LoadBalancer"
   workspace_id    = module.common-n01545552.workspace_id
   pool_name          = "pool-5552"
 }
