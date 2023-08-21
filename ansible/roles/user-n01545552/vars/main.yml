@@ -1,11 +1,8 @@
----
-# vars file for user-n01545552
-groupname: cloudadmins
+group_name: cloudadmins
 
-userlist:
+users:
   - { name: user100, groups: ['cloudadmins', 'wheel'] }
   - { name: user200, groups: ['cloudadmins', 'wheel'] }
   - { name: user300, groups: ['cloudadmins', 'wheel'] }
 
 command: cat /etc/group
-
