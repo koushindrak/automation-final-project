@@ -25,6 +25,7 @@ module "common-n01545552" {
     name     = module.rgroup-n01545552.resource_group_name
     location = module.rgroup-n01545552.resource_group_location
   }
+
   storage_name   = "5552storage"
   workspace_name = "5552workspace"
   vault_name     = "vault5552"
@@ -62,6 +63,8 @@ module "loadbalancer-n01545552" {
   load_balancer_name = "load-balancer-5552"
   public_ip_name     = "load-balancer-5552-public-ip"
   nic                = module.vmlinux-n01545552.linux_nic_id
+  diagnostic_name = "LoadBalancerLog5368"
+  workspace_id    = module.common-n01545552.workspace_id
   pool_name          = "pool-5552"
 }
 
@@ -73,4 +76,14 @@ module "database-n01545552" {
   }
   database_server_name = "postgresql-server-5552"
   database_name        = "postgresql-db-5552"
+}
+
+module "ansible-n01545552" {
+  source        = "./modules/ansible-n01545552"
+  linux_machine_full_name = module.vmlinux-n01545552.linux_machine_full_domain_name
+  linux_variables = {
+    ssh_user       = "n01545552"
+    ssh_privatekey = "~/.ssh/id_rsa"
+  }
+  depends_on = [module.datadisk-n01545552, module.vmlinux-n01545552]
 }

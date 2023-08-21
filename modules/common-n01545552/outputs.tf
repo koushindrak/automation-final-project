@@ -13,3 +13,7 @@ output "log_analytics_workspace_name" {
 output "recovery_services_vault_name" {
   value = azurerm_recovery_services_vault.vault.name
 }
+
+output "workspace_id" {
+  value = azurerm_log_analytics_workspace.workspace.id
+}

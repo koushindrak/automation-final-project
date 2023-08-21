@@ -6,17 +6,18 @@ locals {
     Environment    = "Learning"
   }
 
-  load_balancer_inbound_rules = {
-    allow_http = {
+  load_balancer_rules = {
+    http = {
       name                       = "http"
       protocol                   = "Tcp"
-      port                       = 80
+      frontend_port              = 80
+      backend_port               = 80
       destination_address_prefix = "*"
     }
   }
-  load_balancer_probe = {
-    prob_config = {
-      name = "port 80 is working"
+  load_balancer_probes = {
+    http = {
+      name = "http-running-probe"
       port = 80
     }
   }

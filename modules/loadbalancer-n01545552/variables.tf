@@ -15,6 +15,8 @@ variable "loab_balancer_public_ip_props" {
 }
 variable "load_balancer_name" {}
 variable "pool_name" {}
+variable "diagnostic_name" {}
+variable "workspace_id" {}
 variable "nic" {}
 variable "ip_configs" {}
 variable "lb_sku" {

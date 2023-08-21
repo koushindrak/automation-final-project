@@ -19,4 +19,4 @@ variable "linux_disk_props" {
     create_option        = "Empty"
   }
 }
-}
+

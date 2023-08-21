@@ -29,7 +29,7 @@ output "recovery_services_vault_name" {
 output "linux_vm_name" {
   value = module.vmlinux-n01545552.linux_machine_name
 }
-output "linux_vm_fqdn" {
+output "linux_machine_full_name" {
   value = module.vmlinux-n01545552.linux_machine_full_domain_name
 }
 output "linux_vm_privateIP" {
